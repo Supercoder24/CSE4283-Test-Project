@@ -15,9 +15,26 @@ class BMI:
     print("Welcome to the Body Mass Index Calculator!")
 
     # Gather inputs
-    feet = 0
-    inches = 0
-    pounds = 0
+    try:
+      print()
+      print("Please input height")
+      feet = int(input("Feet: "))
+      inches = float(input("Inches: "))
+
+      if feet < 0 or inches < 0 or (feet == 0 and inches == 0):
+        print("Invalid height. Please try again.")
+        return
+
+      print()
+      print("Please input weight")
+      pounds = float(input("Pounds: "))
+      if pounds < 0:
+        print("Invalid weight. Please try again.")
+        return
+      
+    except:
+      print("Invalid input. Please try again.")
+      return
 
     # Execute functionality
     output = self.main(feet, inches, pounds)

@@ -8,6 +8,7 @@ python3 -m venv .
 ```
 
 2) Activate Virtual Environment
+
 On Linux:
 ```bash
 source bin/activate
@@ -24,13 +25,13 @@ pip install -U pytest
 ```
 
 ## Run Application
-While in virtual environment,
+While in virtual environment (see Setup step 2),
 ```bash
 python3 main.py
 ```
 
 ## Test Application
-While in virtual environment,
+While in virtual environment (see Setup step 2),
 ```bash
 pytest
 ```
