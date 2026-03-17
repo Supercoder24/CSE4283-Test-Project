@@ -40,26 +40,37 @@ class BMI:
     output = self.main(feet, inches, pounds)
 
     # Print outputs
+    print()
     print("Calculated BMI: " + str(output[0]))
     print("BMI Category:   " + output[1])
 
 
   # Convert height in feet and inches to meters
   def heightToMeters(self, feet, inches):
-    return 0
+    return ((feet * 12) + inches) * 0.025
   
   # Convert weight in pounds to kilograms
   def weightToKg(self, pounds):
-    return 0
+    return pounds * 0.45
   
   # Calculate Body Mass Index based on height and weight
   def calcBMI(self, meters, kg):
-    return 0
+    return kg / (meters * meters)
   
   # Get BMI category based on BMI
   def getCategory(self, bmi):
-    return ''
+    if bmi < 18.5:
+      return 'Underweight'
+    elif bmi <= 24.9:
+      return 'Normal Weight'
+    elif bmi <= 29.9:
+      return 'Overweight'
+    else:
+      return 'Obese'
   
   # Execute functionality
   def main(self, feet, inches, pounds):
-    return (0, '')
+    height = self.heightToMeters(feet, inches)
+    weight = self.weightToKg(pounds)
+    bmi = self.calcBMI(height, weight)
+    return (round(bmi, 1), self.getCategory(bmi))
