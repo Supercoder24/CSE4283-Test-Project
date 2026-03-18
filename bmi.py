@@ -55,7 +55,8 @@ class BMI:
   
   # Calculate Body Mass Index based on height and weight
   def calcBMI(self, meters, kg):
-    return kg / (meters * meters)
+    bmi = kg / (meters * meters)
+    return int(10 * bmi) / 10.0
   
   # Get BMI category based on BMI
   def getCategory(self, bmi):
